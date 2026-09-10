@@ -22,5 +22,5 @@ commit:
     stream: python-ml
 
     # Absolute URL of where to commit the Coverity Connect results.
-    url: http://localhost:8080
+    url: https://coverity323.poc.blackduck.com
     on-new-cert: trust
