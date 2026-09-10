@@ -22,7 +22,7 @@ jobs:
         # coverity_passphrase: ${{ secrets.COVERITY_PASSPHRASE }}
         coverity_policy_view: ${{ github.event_name != 'pull_request' && 'Outstanding Issues' || '' }}
         coverity_prComment_enabled: false 
-        coverity_build_command: pip install
+        coverity_build_command: pip install -r requirements.txt
         coverity_clean_command: pip --version
         network_ssl_trustAll: true 
         coverity_local: true 
