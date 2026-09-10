@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "perception-model-dev"
+version = "0.1.0"
+description = "Security tooling evaluation sample (Python ML) - intentionally vulnerable"
+authors = ["Security Tooling Evaluation <nazeer.shaik@wayve.ai>"]
+license = "Proprietary"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pyyaml = "5.3.1"
+pillow = "8.1.0"
+numpy = "1.16.0"
+requests = "2.19.1"
+flask = "1.0"
+jinja2 = "2.10"
+cryptography = "2.3"
+urllib3 = "1.24.1"
+torch = "1.4.0"
+scikit-learn = "0.20.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,25 @@
+# Security tooling evaluation sample (Python/ML) - versions pinned
+# deliberately to known-CVE releases for SCA scanning (Snyk, Safety,
+# pip-audit, Mend, Dependabot, OSV-Scanner, etc). Do NOT install in any
+# environment with network/production access.
+
+pyyaml==5.3.1              # CVE-2020-14343 (arbitrary code exec via full_load/unsafe tags)
+pillow==8.1.0              # CVE-2021-25287, CVE-2021-25288, CVE-2021-27921 (buffer overflow / OOB read)
+numpy==1.16.0              # CVE-2019-6446 (unsafe pickle load path, historical)
+requests==2.19.1           # CVE-2018-18074 (Authorization header leak on cross-domain redirect)
+flask==1.0                 # CVE-2019-1010083 (DoS via unhandled exception), CVE-2018-1000656
+jinja2==2.10               # CVE-2019-10906 (sandbox escape)
+cryptography==2.3          # CVE-2020-25659 (PKCS7 padding oracle), CVE-2018-10903
+urllib3==1.24.1            # CVE-2019-11324, CVE-2020-26137 (CRLF injection)
+torch==1.4.0               # CVE-2022-45907 (eval injection via TorchScript), unsafe torch.load default
+scikit-learn==0.20.0       # CVE-2020-28975 (joblib pickle deserialization)
+Werkzeug==0.15.4           # CVE-2019-14806, CVE-2020-28724
+Django==2.2.0              # CVE-2019-14232, CVE-2019-14233 (used by internal labeling tool)
+paramiko==2.4.1            # CVE-2018-1000805, CVE-2022-24302
+lxml==4.2.5                # CVE-2018-19787, CVE-2020-27783
+protobuf==3.6.1               # CVE-2021-22570
+PyJWT==1.7.1                # CVE-2022-29217 (algorithm confusion/JWT forgery)
+
+# --- Supply-chain / package-integrity test fixtures (not real project deps) ---
+colourama==0.4.1            # KNOWN MALICIOUS TYPOSQUAT of 'colorama' (documented 2019 PyPI supply-chain attack, exfiltrated data)
+pycrypto==2.6.1             # DEPRECATED/unmaintained since 2013, superseded by pycryptodome; CVE-2013-7459 (heap overflow)
